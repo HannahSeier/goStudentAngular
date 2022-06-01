@@ -1,0 +1,19 @@
+<h1 class="bigHeading">Hier eine Detailansicht des Kurses: </h1>
+<div class="card_detail">
+  <div class="container">
+    <div class="card-header">{{course?.id}}. {{ course?.title}} </div>
+
+    <h1>Kursbeschreibung: <br></h1>
+    <h2>{{ course?.description}}</h2>
+
+  </div>
+</div>
+
+
+<p></p>
+
+
+<button [routerLink]="'/courses'" class="ui red button">Zurück zur Kursliste</button>
+
+<h2 class="bigHeading">Hier Einige Angebote für den Kurs "{{ course?.title}}" </h2>
+<bs-offer-list [course] = "course"></bs-offer-list>

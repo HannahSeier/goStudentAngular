@@ -1,0 +1,58 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="card_detail">
+
+
+
+  <div class="edit">
+    <button *ngIf="isTeacherAndOwner()" [routerLink]="'/courses'">
+      <i class="material-icons"(click)="deleteOffer()">delete</i>
+    </button>
+
+    <button *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin', offer?.id]" >
+      <i class="material-icons">edit</i>
+    </button>
+
+
+    <button *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin']" >
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+
+  <h2 class="bigHeading">Hier genauere Infos zum Angebot </h2>
+  <div class="container">
+    <div class="card-header">{{offer?.title}} </div>
+
+    <h2> Beschreibung des Angebots:</h2>
+    <h3>{{ offer?.description}}</h3>
+    <h2> Status: {{ offer?.status}}</h2>
+    <p> Verfügar von: {{ offer?.start}} bis {{ offer?.end}}</p>
+
+
+    <p>Anfrage an <b>{{offer?.user?.name}}</b> senden</p>
+    <button *ngIf="!isTeacherAndOwner()&&this.authService.isLoggedIn()" (click)="createRequest()">
+      <i class="material-icons">question_answer</i>
+    </button>
+  </div>
+</div>
+
+
+
+<div class="card_detail">
+
+  <h3 class="bigHeading"> Hier Infos zum Anbieter des Angebots:   </h3>
+  <div class="container">
+
+    <h3> <i class="material-icons">person</i> Angeboten von: {{user?.name}}</h3>
+    <h3> <i class="material-icons">alternate_email</i> Kontakt: {{user?.email}}</h3>
+  </div>
+</div>
+<br>
+<button [routerLink]="'/courses'" class="ui red button">Zurück zur Kursliste</button>
+
+
+<button *ngIf="isTeacher()" [routerLink]="['../../admin', offer?.id]" class="ui red button" >
+  <span>Neues Angebot erstellen</span>
+</button>
+
+
+

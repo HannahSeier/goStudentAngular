@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
-
+import {AuthenticationService} from "./shared/authentication.service";
 @Component({
   selector: 'bs-root',
-  templateUrl: './app.component.html',
-  styles: []
+  templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'goStudent22';
-}
+  constructor(private authService: AuthenticationService) { }
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+
+  getLoginLabel(){ if(this.isLoggedIn()){
+    return "Profilübersicht"; } else {
+    return "Login"; }
+  } }

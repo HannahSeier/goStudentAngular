@@ -1,1 +1,111 @@
-/* You can add global styles to this file, and also import other style files */
+.bigHeading{
+  margin-left: 5%;
+}
+/*
+Style für die Detail View der Courses
+ */
+.card {
+
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-right: 5%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+/*
+ Style für die Listenansicht der kurse
+ */
+
+
+.card {
+  margin-left: 40px;
+  margin-top: 2%; /* Set width of cards */
+  display: flex;            /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+  border: 1px solid #4d4dff;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;
+  flex-wrap: nowrap; /* Fixes the corners */
+                   /* Add space between cards */
+}
+.card_detail{
+  margin-left: 40px;
+  margin-top: 2%;
+  /* Set width of cards */
+  display: flex;            /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+  border: 1px solid #4d4dff;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;
+  flex-wrap: nowrap;
+  width: 50%;
+  padding: 3%;
+}
+
+.card-header {
+  color: #0033cc;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #4d4dff;
+  background-color: #99ccff;
+  padding: 5px 10px;
+
+
+}
+
+.card-main {
+  margin-top: 30px;
+  display: flex;              /* Children use Flexbox */
+  flex-direction: column;     /* Rotate Axis to Vertical */
+  justify-content: center;    /* Group Children in Center */
+  align-items: center;        /* Group Children in Center (on cross axis) */
+  padding: 15px 0;            /* Add padding to the top/bottom */
+}
+
+.material-icons {
+  font-size: 36px;
+  color: #4d4dff;
+  margin-bottom: 5px;
+}
+
+.main-description {
+  color: #0033cc;
+  font-size: 12px;
+  text-align: center;
+}
+
+.edit{
+
+  margin-left: 60%;
+}
+.edit button{
+  margin-left: 3%;
+}
+
+.hannah{
+  margin-left: 20%;
+  width: 50%;
+  height: 59%;
+}
+.bImage{
+  height: 50%;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  background-image: url("img/students.jpg");
+}
+
+
+

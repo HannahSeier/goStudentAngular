@@ -1,0 +1,17 @@
+<div class="ui middle aligned selection divided list">
+
+  <div *ngFor="let offer of offers" [routerLink]="'/offers/'+ offer.id" >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <div class="card">
+      <div class="card-header">{{offer?.title}}</div>
+      <div class="card-main">
+        <i class="material-icons">school</i>
+        <h1>{{offer?.title}}</h1>
+        <div class="main-description"> Für mehr Infos und Angeboten hier klicken</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

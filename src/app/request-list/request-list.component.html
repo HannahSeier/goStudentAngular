@@ -1,0 +1,18 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<br>
+<div *ngIf="isTeacher()">
+<div class="ui segment">
+  <h2 class="ui right floated header">Deine Anfragen </h2>
+  <div class="ui clearing divider"></div>
+  <p></p>
+</div>
+
+<div *ngFor="let request of requests">
+  <div class="card_detail">
+  <bs-request-list-item [request]="request"></bs-request-list-item>
+  </div>
+</div>
+</div>
+
+
+
