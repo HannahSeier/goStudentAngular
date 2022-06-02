@@ -1,20 +1,30 @@
-<div class="ui middle aligned selection divided list">
-  <div *ngFor="let course of courses" [routerLink]="'/courses/'+ course.id" >
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <div class="card">
-      <div class="card-header">{{course?.id}}</div>
-      <div class="card-main">
-        <i class="material-icons">school</i>
-        <h1>{{course?.description}}</h1>
-        <div class="main-description"> Für mehr Infos zum Kurs und Angebote hier klicken</div>
-      </div>
+<!-- partial:index.partial.html -->
+<div class="flex">
+<div  *ngFor="let course of courses" [routerLink]="'/courses/'+ course.id" >
+<div class="wrapper">
+  <div class="blog_post">
+    <div class="img_pod">
+
     </div>
+    <div class="container_copy">
+      <h3>Kursnummer: {{course?.id}}</h3>
+
+      <h1>{{course?.title}}</h1>
+      <p>{{course?.description}}</p>
+    </div>
+
+    <button ype="button" class="fill">Infos zum Kurs & Angebote </button>
   </div>
+
+</div>
+
+</div>
+<!-- partial -->
 </div>
 
 
+<button type="button" class="fill"  [routerLink]="'/home'" >Zurück zu Home</button>
 
 
-<button [routerLink]="'/home'" class="ui red button">Zurück zu Home</button>
 
 

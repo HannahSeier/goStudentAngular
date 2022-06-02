@@ -2,10 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({ selector: 'bs-home',
   template: `
-    <div class="ui inverted vertical masthead center aligned segment ">
-        <div class="hannah">
-          <br/>
-          <br/>
+
+<div class="card">
         <h1>Willkommen bei GoStudent Nachhilfe </h1>
           <br/>
 
@@ -14,16 +12,15 @@ import { Component } from '@angular/core';
           <h2>Dann bist du hier genau richtig.<br/> Account anlegen, Termine auswählen, und los geht´s</h2>
           <br/>
           <br/>
-        <a routerLink="../courses" class="ui red button">
+          <br/>
+ <button type="button" class="fill" routerLink="../courses" >
             Kursliste ansehen
-        </a>
-        <br/>
-          <br/>
-          <br/>
+        </button>
         </div>
-      <div>
-      </div>
-    </div>
+
+        <br/>
+<br/>
+<br/>
     <br/>
     <div class="bImage">
       <img class="bImage">

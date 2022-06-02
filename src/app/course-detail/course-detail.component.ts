@@ -21,7 +21,11 @@ export class CourseDetailComponent implements OnInit {
 
   ngOnInit() {
     const params = this.route.snapshot.params;
-    this.cs.getSingleCourse(params['id']).subscribe(course => {this.course = course});
+    this.cs.getSingleCourse(params['id']).subscribe(course => {
+      this.course = course
+
+console.log(this.course);
+    });
   }
 
   isTeacher(){
