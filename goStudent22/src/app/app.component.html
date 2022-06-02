@@ -1,0 +1,11 @@
+<div class="ui three item tabs menu">
+  <div class="ui {{isLoggedIn()?'four':'three'}} item tabs menu">
+    <a routerLink="login" routerLinkActive="active"
+       class="item">{{getLoginLabel()}}</a> </div>
+  <router-outlet></router-outlet>
+  <a routerLink="home" routerLinkActive="active" class="item">Home</a>
+  <a routerLink="courses" routerLinkActive="active" class="item">Kurse</a>
+</div>
+<router-outlet>
+
+</router-outlet>

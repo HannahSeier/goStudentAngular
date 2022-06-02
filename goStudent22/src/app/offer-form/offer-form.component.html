@@ -1,0 +1,51 @@
+<h1>Angebot Formular</h1>
+<form class="ui large form" [formGroup]="offerForm" (ngSubmit)="submitForm()">
+  <input type="hidden" formControlName="id">
+  <div class="field">
+
+
+    <label>Titel des Angebots</label>
+    <input formControlName="title">
+    <div *ngIf="errors['title']" class="ui negative message"> {{
+      errors['title'] }} </div>
+  </div>
+  <div class="field">
+
+    <label>Startzeit (von) </label>
+    <input formControlName="start">
+    <div *ngIf="errors['start']" class="ui negative message"> {{
+      errors['start'] }} </div>
+  </div>
+  <div class="field">
+
+    <label>Endzeit (bis)</label>
+    <input formControlName="end"></div>
+  <div *ngIf="errors['end']" class="ui negative message"> {{
+  errors['end'] }} </div>
+  <div class="field">
+
+    <label>Kurse</label>
+
+    <select formControlName="course_id" class="input">
+
+      <option disabled selected value="1">Kursauswahl ...</option>
+
+      <option *ngFor="let course of courses" [value]="course.id">{{course.title}}</option>
+
+    </select>
+
+  </div>
+
+  <div class="field">
+
+    <label>Datum</label>
+    <input type="date" formControlName="date">
+    <div *ngIf="errors['date']" class="ui negative message">{{errors['date'] }}</div>
+  </div>
+  <div class="field">
+
+
+    <label>Beschreibung</label>
+    <textarea formControlName="description" rows="3"></textarea></div>
+  <button type="submit" class="ui button" [disabled]="offerForm.invalid">Speichern</button>
+</form>
