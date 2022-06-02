@@ -1,19 +1,25 @@
-<h1 class="bigHeading">Hier eine Detailansicht des Kurses: </h1>
-<div class="card_detail">
-  <div class="container">
-    <div class="card-header">{{course?.id}}. {{ course?.title}} </div>
+<!-- partial:index.partial.html -->
+<div class="flex">
+    <div class="wrapper">
+      <div class="blog_post">
+        <div class="img_pod">
 
-    <h1>Kursbeschreibung: <br></h1>
-    <h2>{{ course?.description}}</h2>
+        </div>
+        <div class="container_copy">
+          <h3>Kursnummer: {{course?.id}}</h3>
+          <h1>Kurstitel: {{course?.title}}</h1>
+          <h2>Kursbeschreibung: </h2>
+          <p>{{course?.description}}</p>
+        </div>
 
+      </div>
+
+      <br/>
+      <button type="button" class="fill" [routerLink]="'/courses'"> <- Zurück zur Kursliste</button>
+    </div>
   </div>
-</div>
+  <!-- partial -->
+<br/>
 
 
-<p></p>
-
-
-<button [routerLink]="'/courses'" class="ui red button">Zurück zur Kursliste</button>
-
-<h2 class="bigHeading">Hier Einige Angebote für den Kurs "{{ course?.title}}" </h2>
 <bs-offer-list [course] = "course"></bs-offer-list>

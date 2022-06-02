@@ -20,12 +20,12 @@ export class OfferService {
   }
 
   //get single offer
-  getOfferByOfferId(id: String): Observable<Offer> {
+  getOfferByOfferId(id: Number): Observable<Offer> {
     return this.http.get<Offer>(`${this.api}/getByOfferId/${id}`).pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 
   //get single offer by offer Id
-  getOfferByCourseId(id: String): Observable<Array<Offer>> {
+  getOfferByCourseId(id: Number): Observable<Array<Offer>> {
     return this.http.get<Array<Offer>>(`${this.api}/getByCourseId/${id}`).pipe(retry(3)).pipe(catchError(this.errorHandler));
   }
 

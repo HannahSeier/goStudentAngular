@@ -1,58 +1,45 @@
+<!-- partial:index.partial.html -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<div class="card_detail">
+<div class="wrapper">
+  <button type="button" class="fill" [routerLink]="'/courses'"> <- Zurück zur Kursliste</button>
+  <div class="post_wide">
 
+    <div class="container_copy">
+      <h1>Anbebot: "{{offer?.title}}"</h1>
+      <h3>Erstellt am: {{offer?.date}}</h3>
 
-
-  <div class="edit">
-    <button *ngIf="isTeacherAndOwner()" [routerLink]="'/courses'">
-      <i class="material-icons"(click)="deleteOffer()">delete</i>
+      <p>Genauere Infos zum Angebot:von: {{offer?.start}} bis: {{offer?.end}} </p>
+      <h3> Beschreibung des Angebots:</h3>
+      <p>{{ offer?.description}}</p>
+      <p> Status: {{ offer?.status}}</p>
+      <p>{{user?.name}} is für dich verfügar von: {{ offer?.start}} bis {{ offer?.end}}</p>
+    </div>
+    <br/>
+    <p> <i class="material-icons">person</i> Angeboten von: {{user?.name}}</p>
+    <p> <i class="material-icons">alternate_email</i> Kontakt: {{user?.email}}</p>
+    <button type="button" class="fill"  *ngIf="isTeacherAndOwner()" (click)="deleteOffer()" [routerLink]="'/courses'">
+      Löschen
     </button>
+    <br/>
 
-    <button *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin', offer?.id]" >
-      <i class="material-icons">edit</i>
+    <button type="button" class="fill"  *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin', offer?.id]" >
+      Angebot bearbeiten
     </button>
-
-
-    <button *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin']" >
-      <i class="material-icons">add</i>
+    <br/>
+    <button type="button" class="fill"  *ngIf="isTeacherAndOwner()" [routerLink]="['../../admin']" >
+      Neues Angebot hinzufügen
+    </button>
+    <br/>
+    <button type="button" class="fill"  *ngIf="!isTeacherAndOwner()&&this.authService.isLoggedIn()" (click)="createRequest()">
+      Anfrage an {{offer?.user?.name}} senden
     </button>
   </div>
 
-  <h2 class="bigHeading">Hier genauere Infos zum Angebot </h2>
-  <div class="container">
-    <div class="card-header">{{offer?.title}} </div>
-
-    <h2> Beschreibung des Angebots:</h2>
-    <h3>{{ offer?.description}}</h3>
-    <h2> Status: {{ offer?.status}}</h2>
-    <p> Verfügar von: {{ offer?.start}} bis {{ offer?.end}}</p>
-
-
-    <p>Anfrage an <b>{{offer?.user?.name}}</b> senden</p>
-    <button *ngIf="!isTeacherAndOwner()&&this.authService.isLoggedIn()" (click)="createRequest()">
-      <i class="material-icons">question_answer</i>
-    </button>
-  </div>
 </div>
+<!-- partial -->
 
 
 
-<div class="card_detail">
-
-  <h3 class="bigHeading"> Hier Infos zum Anbieter des Angebots:   </h3>
-  <div class="container">
-
-    <h3> <i class="material-icons">person</i> Angeboten von: {{user?.name}}</h3>
-    <h3> <i class="material-icons">alternate_email</i> Kontakt: {{user?.email}}</h3>
-  </div>
-</div>
-<br>
-<button [routerLink]="'/courses'" class="ui red button">Zurück zur Kursliste</button>
-
-
-<button *ngIf="isTeacher()" [routerLink]="['../../admin', offer?.id]" class="ui red button" >
-  <span>Neues Angebot erstellen</span>
-</button>
 
 
 

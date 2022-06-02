@@ -75,12 +75,12 @@ Style für die Detail View der Courses
 
 .material-icons {
   font-size: 36px;
-  color: #4d4dff;
+  color:  #C8A2C8;
   margin-bottom: 5px;
 }
 
 .main-description {
-  color: #0033cc;
+  color:  #C8A2C8;
   font-size: 12px;
   text-align: center;
 }
@@ -107,5 +107,167 @@ Style für die Detail View der Courses
   background-image: url("img/students.jpg");
 }
 
+/*
+    style for courses
+ */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
 
 
+
+
+.blog_post {
+  position: relative;
+  padding: 6rem 3rem 6rem 6rem;
+  background: #fff;
+  max-width: 400px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+.post_wide{
+
+  position: relative;
+  padding: 6rem 3rem 6rem 6rem;
+
+  margin-top: 2em;
+  max-width: 900px;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+}
+
+
+
+.img_pod {
+  height: 110px;
+  width: 110px;
+  background: #6699CC;
+  z-index: -1;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  position: absolute;
+  left: -50px;
+  top: 10px;
+  transform: translateY(-50%);
+
+  /*
+  color: #C8A2C8;
+
+  #C8A2C8
+
+  #E3BC9A
+  #FFFFF0
+  #F5F5F5
+  #FFFAFA
+
+   */
+}
+
+
+
+h3 {
+  margin: 0 0 0.5rem 0;
+  color: #999;
+  font-size: 1.25rem;
+}
+
+h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+p {
+  margin: 0 0 4.5rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.btn_primary {
+  border: none;
+  outline: none;
+  background: #6699CC;
+  padding: 1.5rem 2rem;
+  border-radius: 50px;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 1px 10px 2rem rgba(13, 94, 98, 0.5);
+  transition: all .2s ease-in;
+  text-decoration: none;
+
+  align-self: end;
+}
+
+.btn_primary:hover {
+  box-shadow: 0px 5px 1rem rgba(13, 94, 98, 0.5);
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding-top: 3em;
+  padding-left: 10em;
+
+}
+
+.wrapper {
+
+  display: grid;
+  height: 500px;
+}
+
+.blog_post{
+  display: grid;
+}
+
+
+.con{
+  display: flex;
+}
+
+
+/*
+Button styling
+ */
+
+/* Fill button styling */
+.fill {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.fill::after {
+  content: "";
+  background-color: #AEC6CF;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.fill:hover::after {
+  top: 0px;
+  left: 0px;
+}

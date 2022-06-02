@@ -6,7 +6,8 @@ export class Request {
     public id: number,
     public status:string,
     public offer: Offer,
-    public user: User
+    public user: User,
+    public offer_id: number
   ) {
   }
 }

@@ -22,6 +22,11 @@ export class CourseListComponent implements OnInit {
 
     const params = this.route.snapshot.params;
     this.cs.getAll().subscribe(courses => {this.courses = courses});
+
+    const courseListWrap = document.getElementsByTagName('bs-couse-list');
+    if(courseListWrap){
+      console.log("hi");
+    }
   }
 
 
