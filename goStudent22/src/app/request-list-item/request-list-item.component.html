@@ -1,0 +1,36 @@
+
+<div class="con">
+  <div class="card">
+    <div class="card__header">
+      <img src="https://source.unsplash.com/600x400/?computer" alt="card__image" class="card__image" width="600">
+    </div>
+
+    <div class="card__body">
+      <span class="tag tag-blue">Erstellt am: {{offer?.date}}</span>
+      <span> <br/> Status: {{request?.status}}</span>
+       <h4>Anfrage von: {{request?.user?.name}} zum Angebot "{{offer?.title}}" </h4>
+      <h5>"{{offer?.description}}"</h5>
+      <span>  von: {{offer?.start}} bis: {{offer?.start}}</span>
+    </div>
+
+    <div *ngIf= "!getAccepted()">
+      <button type="button" class="fill"  (click)="accept()">Annehmen
+      </button>
+      <br/>
+      <button type="button" class="fill" (click)="deny()">Ablehnen</button>
+    </div>
+  </div>
+</div>
+
+<fieldset *ngIf= "getAccepted()" class="grey">
+    <button type="button" class="fill"  (click)="accept()">Annehmen
+    </button>
+  <h3>Bereits angenommen</h3>
+   <br/>
+    <button type="button" class="fill" (click)="deny()">Ablehnen</button>
+
+</fieldset>
+
+
+
+
